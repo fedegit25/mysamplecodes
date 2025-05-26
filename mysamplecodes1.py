@@ -10,10 +10,12 @@ from barcode.writer import ImageWriter
 from PIL import Image
 
 # ---------- GOOGLE SHEETS SETUP ----------
-service_account_info = json.loads(st.secrets["gcp_service_account"].to_json())
-scopes = ["https://www.googleapis.com/auth/spreadsheets"]
-creds = Credentials.from_service_account_info(service_account_info, scopes=scopes)
-client = gspread.authorize(creds)
+# Load credentials from Streamlit Cloud secrets
+creds_dict = dict(st.secrets)  # works in Streamlit Cloud (flat keys only)
+
+# Create authorized gspread client
+creds = Credentials.from_service_account_info(creds_dict)
+gc = gspread.authorize(creds)
 
 # Open Google Sheet
 sheet = client.open("Mysamplecodes").sheet1  # Change name if needed
