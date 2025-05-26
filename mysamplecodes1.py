@@ -18,7 +18,7 @@ creds = Credentials.from_service_account_info(creds_dict)
 gc = gspread.authorize(creds)
 
 # Open Google Sheet
-sheet = client.open("Mysamplecodes").sheet1  # Change name if needed
+sheet = gc.open("Mysamplecodes").sheet1
 records = sheet.get_all_records()
 
 # ---------- UI ----------
