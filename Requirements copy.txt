@@ -1,0 +1,6 @@
+streamlit
+gspread
+google-auth
+oauth2client
+pillow
+python-barcode
