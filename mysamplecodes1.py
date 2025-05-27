@@ -25,7 +25,6 @@ def connect_to_gsheet(creds_dict, spreadsheet_name, sheet_name):
 creds = Credentials.from_service_account_info(creds_dict, scopes=["https://www.googleapis.com/auth/spreadsheets"])
 client = gspread.authorize(creds)
 spreadsheet = client.open(spreadsheet_name)  
-return spreadsheet.worksheet(sheet_name)  # Access specific sheet by name
 
 # Open Google Sheet
 SPREADSHEET_NAME = 'Mysamplecodes'
