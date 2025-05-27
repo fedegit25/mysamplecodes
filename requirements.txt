@@ -4,4 +4,4 @@ google-auth
 oauth2client
 pillow
 python-barcode
-google.oauth2.service_account
+google.oauth2
