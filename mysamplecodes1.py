@@ -21,14 +21,15 @@ def connect_to_gsheet(creds_dict, spreadsheet_name, sheet_name):
 
 
 # Create authorized gspread client
+SPREADSHEET_NAME = 'Mysamplecodes'
+SHEET_NAME = 'Sheet1'
 
 creds = Credentials.from_service_account_info(creds_dict, scopes=["https://www.googleapis.com/auth/spreadsheets"])
 client = gspread.authorize(creds)
 spreadsheet = client.open(SPREADSHEET_NAME)  
 
 # Open Google Sheet
-SPREADSHEET_NAME = 'Mysamplecodes'
-SHEET_NAME = 'Sheet1'
+
 
 sheet_by_name = connect_to_gsheet(creds, SPREADSHEET_NAME, sheet_name=SHEET_NAME) 
 
