@@ -12,11 +12,17 @@ from PIL import Image
 # ---------- GOOGLE SHEETS SETUP ----------
 # Load credentials from Streamlit Cloud secrets
 
-def
+def connect_to_gsheet(creds_dict, spreadsheet_name, sheet_name):
+    scope = ["https://spreadsheets.google.com/feeds",
+             'https://www.googleapis.com/auth/spreadsheets',
+             "https://www.googleapis.com/auth/drive.file",
+             "https://www.googleapis.com/auth/drive"]
+             
 creds_dict = dict(st.secrets)  # works in Streamlit Cloud (flat keys only)
 
 # Create authorized gspread client
-creds = Credentials.from_service_account_info(creds_dict, scopes=["https://www.googleapis.com/auth/spreadsheets"])
+
+creds = Credentials.from_service_account_info(creds_dict, scopes=["https://www.googleapis.com/auth/spreadsheets")
 gc = gspread.authorize(creds)
 
 # Open Google Sheet
