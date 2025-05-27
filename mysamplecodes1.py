@@ -8,6 +8,7 @@ from google.oauth2.service_account import Credentials
 import barcode
 from barcode.writer import ImageWriter
 from PIL import Image
+from google.oauth2 import service_account
 
 # ---------- GOOGLE SHEETS SETUP ----------
 # Create a connection object.
