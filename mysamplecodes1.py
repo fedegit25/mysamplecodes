@@ -20,8 +20,11 @@ creds = Credentials.from_service_account_info(creds_dict, scopes=["https://www.g
 gc = gspread.authorize(creds)
 
 # Open Google Sheet
-sheet = gc.open("Mysamplecodes").sheet1
-records = sheet.get_all_records()
+SPREADSHEET_NAME = 'Mysamplecodes'
+SHEET_NAME = 'Sheet1'
+
+sheet_by_name = connect_to_gsheet(creds, SPREADSHEET_NAME, sheet_name=SHEET_NAME) 
+records = sheet_by_name.get_all_records()
 
 # ---------- UI ----------
 st.title("📦 Sample Barcode Logger & Search")
