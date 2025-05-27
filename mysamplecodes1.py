@@ -12,7 +12,7 @@ from PIL import Image
 # ---------- GOOGLE SHEETS SETUP ----------
 # Load credentials from Streamlit Cloud secrets
 
-
+def
 creds_dict = dict(st.secrets)  # works in Streamlit Cloud (flat keys only)
 
 # Create authorized gspread client
